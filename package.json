@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev-startup": "node deploy-commands.js && node Commentator.js",
+    "start-quiet": "nohup bash ./runner.sh &",
+    "start-and-tail": "nohup bash ./runner.sh & > nohup.out && tail nohup.out -f",
+    "kill-and-cleanup": "kill $(cat run.pid) && rm run.pid && rm nohup.out && rm commentator.out",
+    "cleanup": "rm run.pid && rm nohup.out && rm commentator.out"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.16.0",
+    "discord.js": "^14.13.0",
+    "ffmpeg-static": "^5.2.0",
+    "google-tts-api": "^2.0.2",
+    "libsodium-wrappers": "^0.7.13"
+  }
+}
