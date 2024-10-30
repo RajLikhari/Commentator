@@ -1,10 +1,8 @@
-const { discord_token } = require("./config.json");
 const fs = require("node:fs");
 const path = require('node:path');
 const googleTTS = require("google-tts-api"); // CommonJS
 const { Client, GatewayIntentBits, Events, Collection } = require("discord.js");
 const { getVoiceConnection, createAudioPlayer, createAudioResource, joinVoiceChannel, AudioPlayerStatus } = require("@discordjs/voice");
-const { stderr, stdout } = require("node:process");
 var exec = require('child_process').exec;
 
 //Setting up Intents, which are permissions assigned in the Discord Developer Portal
@@ -281,4 +279,4 @@ setInterval(() => {
 }, 60000)
 
 //Class function which connects the discord bot to the server via the token
-client.login(discord_token);
+client.login(process.env.DISCORD_TOKEN);

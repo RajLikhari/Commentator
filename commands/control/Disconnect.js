@@ -5,6 +5,6 @@ module.exports = {
     .setName("disconnect")
     .setDescription("Disconnect the Commentator within its active voice channel"),
     async execute(interaction) {
-        await interaction.reply("Bringing the Commentator to Death!");
+        await interaction.reply("Taking the Commentator to Death!");
     },
 };
